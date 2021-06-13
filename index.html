@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RGBTA</title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&family=Lexend:wght@600&family=Manrope&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+
+<body>
+
+    <div id="header">
+        <div>
+            <h2>RGBTOA</h2>
+            <p>You've heard of itoa and ftoa, but get ready for the new rgbtoa. Upload a supported format, and we'll convert it to ascii for you!</p>
+
+
+        </div>
+
+    </div>
+    <div id="content">
+        <div id="file-select">
+            <button id="file-input-button" onclick="file_drop();">Select File</button>
+            <input id="file-input" type="file" accept="image/*" onchange="select_image()" hidden>
+        </div>
+        <div id="img-preview-outer" hidden>
+            <div id="img-preview">
+                <h2>Image Preview</h2>
+                <p>Drag the grid around to determine how rgbtoa will split each character in the image. Each box is a character. Scroll to increase/decrease box size.</p>
+                <p>Press here when you're ready to convert!</p>
+                <p>Resolution: <span id="res-val"></span></p>
+                <p>Number of characters: <span id="char-val"></span></p>
+                <div>
+                    <button class="obama" id="convert-button" onclick="convert();">Convert!</button>
+                    <button class="obama" onclick="reset();">RGBTOA a different image</button>
+                </div>
+                <div class="stack">
+                    <img id="img-preview-img">
+                    <canvas id="preview-canvas"></canvas>
+                </div>
+            </div>
+        </div>
+        <div id="final-output" hidden>
+            <a id="download">Download!</a>
+            <button onclick="reset();">RGBTOA another image</button>
+            <br>
+            <br>
+            <p id="output"></p>
+            <!--
+            <div id="zoom">
+                <button onclick="zoom_in();">+</button><button onclick="zoom_out();">-</button>
+            </div>
+        -->
+        </div>
+    </div>
+
+    <img id="true-image" hidden>
+    <canvas id="true-canvas" hidden></canvas>
+</body>
+
+</html>
